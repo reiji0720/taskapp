@@ -30,7 +30,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         searchFlag = true
        
         if let search = searchBar.text{
-            category = try! Realm().objects(Task.self).filter("category = '\(search)'")
+            category = try! Realm().objects(Task.self).filter("category BEGINSWITH '\(search)'")
         } else {
             
         }
